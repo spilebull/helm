@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{.Release.Name}}-admin
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: 
+    value: "{{.Values.PhpLdapAdmin.HostName}}"
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: "{{.Values.PhpLdapAdmin.LdapEndpoint | default .Release.Name}}-admin"
+          servicePort: 80

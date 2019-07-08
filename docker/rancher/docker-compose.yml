@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  rancher-server:
+    container_name: rancher
+    image: rancher/server:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./mysql:/var/lib/mysql:rw"
+    restart: always

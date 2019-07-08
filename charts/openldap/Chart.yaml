@@ -1,0 +1,12 @@
+apiVersion: v1
+description: OpenLdap
+home: https://www.openldap.ort
+keywords:
+- ldap
+maintainers:
+- email: smallphilosophy@gmail
+  name: te-koyama
+name: openldap
+sources:
+#- http://10.2.66.60/gitlab/service/openldap
+version: 0.1.0
